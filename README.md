@@ -35,15 +35,19 @@
 - You will see the stick insect robot then run :arrow_forward:
 ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/99d05e04-6962-4bd9-8cdf-ec959cdcfa82)
 
-
-
-
-
-
-
-
 ______
-Author: Thirawat Chuthong (Joe)
+Author: Thirawat Chuthong (Joe) \\
 contact: thirawat.c_s21[at]vistec.ac.th
+
+
+
+
+
+
+
+
+
+
+
 
 
