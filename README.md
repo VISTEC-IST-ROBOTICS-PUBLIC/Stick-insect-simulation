@@ -46,11 +46,16 @@ See the figure for more explanation.
 
 #### (2) The stick insect simulation with self-organized locomotion control
 This system uses the remaining files to run the system. We use ROS1 for interfacing (sending motor commands, receiving feedback signals, etc) with the simulation.
-You can run this system by follow below.
+You can run this system by following the steps below.
+- Change the file path to your file location!!!
+  - In __rbfn.h__ >> line 51
+    ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/4b9acddc-7c95-4242-9d90-66ff14b46ecc)
+  - In __rbfnsemicircle.h__ line 48
+    ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/76156a55-1005-4c66-af2f-a122a7f8fc55)
 - Open a terminal and run "__roscore__"
 - Open CoppeliaSim >> [see example](https://forum.coppeliarobotics.com/viewtopic.php?t=9148\)
-- In the simulation, open scene from the downloaded folder “__medaextra_ver2.ttt__”
-- You will see the stick insect robot then run :arrow_forward:
+- In the simulation, Open scene from the downloaded folder “__medaextra_ver2.ttt__”
+- You will see the stick insect robot, then run :arrow_forward:
 ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/99d05e04-6962-4bd9-8cdf-ec959cdcfa82)
 
 
