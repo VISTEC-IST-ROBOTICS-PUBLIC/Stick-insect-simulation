@@ -29,11 +29,24 @@
 - Add "source <your path to workspace>/devel/setup.bash" to .bashrc >> [see example](https://answers.ros.org/question/206876/how-often-do-i-need-to-source-setupbash/)
 
 ## (e) How to run the simulation
+In the provided files, we have two simulation system
+#### (1) fixed Leg trajectory simulation
+This system contains only __medaextra-fixed_CPG.ttt__, this system is used to observe the leg trajectory data from a real insect and extract it to robot motor commands.
+Then, the motor commands are used to be a target in RBF network, and we can obtain RBF weights to transfer CPG signals to motor signals. We can run this simulation file without using ROS1.
+See the figure for more explanation.
+![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/210be94d-f760-4609-87bf-3620cbda53df)
+![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/2716ed37-7a0f-4997-b213-e749b6217d70)
+![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/ce281b21-f4ae-4a7b-b88c-54a4ac53c32a)
+
+#### (2) The stick insect simulation with self-organized locomotion control
+This system uses the remaining files to run the system. We use ROS1 for interfacing (sending motor commands, receiving feedback signals, etc) with the simulation.
+You can run this system by follow below.
 - Open a terminal and run "__roscore__"
 - Open CoppeliaSim >> [see example](https://forum.coppeliarobotics.com/viewtopic.php?t=9148\)
 - In the simulation, open scene from the downloaded folder “__medaextra_ver2.ttt__”
 - You will see the stick insect robot then run :arrow_forward:
 ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/99d05e04-6962-4bd9-8cdf-ec959cdcfa82)
+
 
 ______
 ##### Author: Thirawat Chuthong (Joe) (contact: thirawat.c_s21[at]vistec.ac.th)
