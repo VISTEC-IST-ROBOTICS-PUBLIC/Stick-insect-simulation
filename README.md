@@ -52,7 +52,7 @@ You can run this system by following the steps below.
 - Change the file path to match my own machine!!!
   - In __rbfn.h__ >> line 51
     ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/4b9acddc-7c95-4242-9d90-66ff14b46ecc)
-  - In rbfn_semicircle.h__ >> line 48
+  - In __rbfn_semicircle.h__ >> line 48
     ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/76156a55-1005-4c66-af2f-a122a7f8fc55)
 - Open a terminal and run "__roscore__"
 - Open CoppeliaSim >> [see example](https://forum.coppeliarobotics.com/viewtopic.php?t=9148\)
@@ -60,7 +60,9 @@ You can run this system by following the steps below.
 - You will see the stick insect robot, then run :arrow_forward:
 ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/99d05e04-6962-4bd9-8cdf-ec959cdcfa82)
 
-
+//
+//
+//
 ______
 ##### Author: Thirawat Chuthong (Joe) (contact: thirawat.c_s21[at]vistec.ac.th)
 
