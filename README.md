@@ -30,27 +30,27 @@
 
 ## (e) How to run the simulation
 In the provided files, we have two simulation system
-#### (1) fixed Leg trajectory simulation
+### (1) fixed Leg trajectory simulation
 This system contains only __medaextra-fixed_CPG.ttt__, this system is used to observe the leg trajectory data from a real insect and extract it to robot motor commands.
 Then, the motor commands are used to be a target in RBF network, and we can obtain RBF weights to transfer CPG signals to motor signals. We can run this simulation file without using ROS1.
 See the figure for more explanation.
 
-- The stick insect system
+#### The stick insect system
   ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/210be94d-f760-4609-87bf-3620cbda53df)
 
-- Visibility in the simulation
+#### Visibility in the simulation
   ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/2716ed37-7a0f-4997-b213-e749b6217d70)
 
-- Check the trajectory path
+#### Check the trajectory path
   ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/ce281b21-f4ae-4a7b-b88c-54a4ac53c32a)
 
-#### (2) The stick insect simulation with self-organized locomotion control
+### (2) The stick insect simulation with self-organized locomotion control
 This system uses the remaining files to run the system. We use ROS1 for interfacing (sending motor commands, receiving feedback signals, etc) with the simulation.
 You can run this system by following the steps below.
 - Change the file path to your file location!!!
   - In __rbfn.h__ >> line 51
     ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/4b9acddc-7c95-4242-9d90-66ff14b46ecc)
-  - In __rbfnsemicircle.h__ line 48
+  - In __rbfnsemicircle.h__ >> line 48
     ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/76156a55-1005-4c66-af2f-a122a7f8fc55)
 - Open a terminal and run "__roscore__"
 - Open CoppeliaSim >> [see example](https://forum.coppeliarobotics.com/viewtopic.php?t=9148\)
