@@ -44,10 +44,12 @@ See the figure for more explanation.
 #### Check the trajectory path
   ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/ce281b21-f4ae-4a7b-b88c-54a4ac53c32a)
 
+
+
 ### (2) The stick insect simulation with self-organized locomotion control
 This system uses the remaining files to run the system. We use ROS1 for interfacing (sending motor commands, receiving feedback signals, etc) with the simulation.
 You can run this system by following the steps below.
-- Change the file path to your file location!!!
+- Change the file path to match my own machine!!!
   - In __rbfn.h__ >> line 51
     ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/4b9acddc-7c95-4242-9d90-66ff14b46ecc)
   - In __rbfnsemicircle.h__ >> line 48
