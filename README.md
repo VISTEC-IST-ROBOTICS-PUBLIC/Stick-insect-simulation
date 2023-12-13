@@ -59,22 +59,102 @@ You can run this system by following the steps below.
 - In the simulation, Open the scene from the downloaded folder “__medaextra_ver2.ttt__”
 - You will see the stick insect robot, then run :arrow_forward:
 ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/99d05e04-6962-4bd9-8cdf-ec959cdcfa82)
-
-//
-//
-//
 ______
 ##### Author: Thirawat Chuthong (Joe) (contact: thirawat.c_s21[at]vistec.ac.th)
+___________________________________
+
+# Upload CSV file to CoppeliaSim (VREP)
+## Introduction
+In this tutorial, it will be shown how to upload a CSV file to CoppeliaSim (VREP). A script will be used to read
+the CSV file and create a trajectory for the robot/object that you intend to move.
+
+## Prerequisites
+- CoppeliaSim (VREP) installed.
+- CSV file with the trajectory to be followed.
+- CoppeliaSim scene with the robot/object that will follow the trajectory.
+
+## Step 1: Create a CSV file with the trajectory to be followe
+The CSV file must have the following format:
+- ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/bcd3130a-a172-4f7c-8741-1a00dd61cb52)
+
+For example:
+- ![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/dc793bd4-58c5-4ea9-8f7a-4c941b2eddfa)
+
+This is the only format that CoppeliaSim accept for the paths. The first row must contain the names of the
+columns, and the following rows must contain the values of the trajectory. By using third part programs like
+excel or google sheets, you can create the CSV file and save it in .csv format.
+
+## Step 2: CoppeliaSim scene
+In CoppeliaSim scene, you will need to add a dummy object. This object will be the one that will follow the
+trajectory. (it can be any kind of object, even a primitive shape like cuboids) After adding the dummy object,
+![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/1a0d4106-1394-45d1-99fc-1f29e5a52af5)
+
+you will need to add this script by right clicking on the dummy object and selecting Add -> Associated
+child script -> Non-threaded.
+![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/8817fa34-6491-467e-a5b0-341fb0a37d6a)
+
+Then, you will need to copy this script to the dummy object script.
+
+```lua
+  function sysCall_init()
+  -- Check current path of your script file
+   local currentPath = sim.getStringParam(sim.stringparam_scene_path)
+   print(currentPath)
+  -- Create an array to store the data
+   local csvPath = {}
+  -- Open your csv file : relate to your current path
+   local file = io.open(currentPath .. "/path&to&your&file.csv", "r")
+   print("open")
+   if file then
+   print("file")
+  -- Read and store each line of data in the array
+   for line in file:lines() do
+   for value in line:gmatch("([^,]+)") do
+   table.insert(csvPath, tonumber(value))
+   end
+   end
+  -- Close the file
+   file:close()
+  -- Now 'csvPath' contains your CSV data in a Lua array
+  -- You can use 'csvPath' for further processing in your simulation
+   else
+   print("Failed to open the file")
+   end
+   print(csvPath)
+  -- This is a simple path you can use this stead of csvPath
+   local simPath = {
+   0.1,0.1,0.1,0,0,0,1,
+   0.2,0.2,0.2,0,0,0,1,
+   0.3,0.3,0.3,0,0,0,1,
+   0.4,0.4,0.3,0,0,0,1,
+   0.5,0.5,0.2,0,0,0,1,
+   0.4,0.4,0.1,0,0,0,1,
+   0.3,0.3,0.1,0,0,0,1,
+   0.2,0.2,0.2,0,0,0,1,
+   0.1,0.1,0.3,0,0,0,1}
+  -- Create path
+   sim.createPath(csvPath,16)
+  end
+```
+
+In the script, you will need to change the path to your CSV file. You can do this by changing the following
+line:
+```lua
+  local file = io.open(currentPath .. "/path&to&your&file.csv", "r")
+```
+
+## Step 3: Use the script to read the CSV file and create the trajectory
+Now, to exploit the script you will need to run the simulation. After running the simulation, the script will
+read the CSV file and create the trajectory. To see the trajectory, you will need to select the dummy object
+and then select the path that was created by the script.
+
+WHEN THE SIMULATION IS STILL RUNNING is possible to copy the path object, stop the simulation and
+paste the path object in the scene. This way you will be able to see the trajectory without running the
+simulation
+
+![image](https://github.com/VISTEC-IST-ROBOTICS-PUBLIC/Stick-insect-simulation/assets/21343117/29d8aa84-c1e5-44c3-a291-6a849511450a)
 
 
-
-
-
-
-
-
-
-
-
-
+##### Author: 
+Gian Paolo Currá (contact: gicur22@student.sdu.dk) and Thirawat Chuthong (contact: thirawat.c_s21[at]vistec.ac.th)
 
